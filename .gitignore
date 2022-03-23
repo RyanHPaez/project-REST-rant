@@ -1,3 +1,4 @@
+# ensuring files that we do not want to have on GitHub are never posted there
 node_modules
 .env
 .DS_Store
