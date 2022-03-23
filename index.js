@@ -20,8 +20,8 @@ app.get('/', (req, res) => {
   })
 // Create a second route. Needs to go at the end because '*'
 app.get('*', (req, res) => {
-    res.status(404).send('<h1>404 Page</h1>')
-})
+    res.render('error404')
+  })
 // Listen for connections.
 app.listen(process.env.PORT)
 
