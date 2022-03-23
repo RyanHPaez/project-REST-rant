@@ -1,11 +1,5 @@
 const React = require('react')
 
-//stub function
-function Def (html) {}
-
-//def function
-module.exports = Def
-
 function Def (html) {
     return (
         <html>
@@ -18,3 +12,5 @@ function Def (html) {
         </html>
     )
   }
+
+module.exports = Def
