@@ -1,6 +1,6 @@
 // making stub routes
 const router = require('express').Router()
-// const Def = require('./default')
+
 
 
 // GET /places
