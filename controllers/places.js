@@ -13,11 +13,7 @@ router.get("/", (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  if (!req.body.pic) {
-    // Default image if one is not provided
-    req.body.pic = 'http://placekitten.com/400/400'
-  }
-
+  if (!req.body.pic) {req.body.pic = 'http://placekitten.com/400/400' }
   db.Place.create(req.body)
   .then(() => {
       res.redirect('/places')
@@ -54,6 +50,17 @@ router.get("/:id", (req, res) => {
     });
 });
 
+router.put('/:id', (req, res) => {
+  db.Place.findByIdAndUpdate(req.params.id, req.body)
+      .then(() => {
+          res.redirect(`/places/${req.params.id}`)
+      })
+      .catch(err => {
+          console.log('err', err)
+          res.render('error404')
+      })
+})
+
 router.get('/:id/edit', (req, res) => {
   db.Place.findById(req.params.id)
       .then(place => {
@@ -63,6 +70,8 @@ router.get('/:id/edit', (req, res) => {
           res.render('error404')
       })
 })
+
+
 
 router.delete('/:id', (req, res) => {
   db.Place.findByIdAndDelete(req.params.id)
@@ -77,12 +86,5 @@ router.delete('/:id', (req, res) => {
 
 //comments
 
-router.post("/:id/rant", (req, res) => {
-  res.send("GET /places/:id/rant stub");
-});
-
-router.delete("/:id/rant/:rantId", (req, res) => {
-  res.send("GET /places/:id/rant/:rantId stub");
-});
 
 module.exports = router;

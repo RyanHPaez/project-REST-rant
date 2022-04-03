@@ -9,6 +9,15 @@ h1 {
     color: cornflowerblue;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.inactive {
+    color: gray;
+}
+
 h2 {
     color: lightblue;
 }
@@ -18,6 +27,10 @@ main {
     margin-left: 20px;
     padding: 20px;
     background-color: white;
+}
+
+.border {
+    border: 1px solid gray;
 }
 
 nav {
@@ -49,15 +62,7 @@ form {
     display: inline;
 }
 
-.inactive {
-    color: gray;
-}
 
-.border {
-    border: 1px solid gray;
-}
 
-img {
-    max-width: 100%;
-    height: auto;
-}
+
+
