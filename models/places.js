@@ -9,7 +9,7 @@ const placeSchema = new mongoose.Schema({
   founded: {
     type: Number,
     min: [1673, 'This place is ancient!'],
-    max: [new Date().getFullYear(), 'The next big restruant!']
+    max: [new Date().getFullYear(), 'The next Place to Eat!']
   }
 })
 

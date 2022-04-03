@@ -5,21 +5,21 @@ function home() {
   return (
     <Default>
       <main>
-        <h1>REST-Rant</h1>
+        <h1>REST-Rants</h1>
         <div>
           <img
-            src="/images/chia-drink.jpg"
+            src="https://popmenucloud.com/cdn-cgi/image/width=640,height=640,format=png,fit=scale-down/rjspvfeg/ab3dce7e-345e-400a-a385-6ce873711cf6.jpg"
             alt="Chia Fruit Shake"
             style={{ width: 800 }}
           />
           <div>
             Photo by{" "}
-            <a href="https://unsplash.com/@cravethebenefits?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
-              Brenda Godinez
+            <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile">
+              Ryan Paez
             </a>{" "}
             on{" "}
-            <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
-              Unsplash
+            <a href="https://insideecology.com/2018/06/21/a-closer-look-at-spider-webs/">
+              The Web!
             </a>
           </div>
         </div>
