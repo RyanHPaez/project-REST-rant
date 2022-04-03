@@ -1,22 +1,47 @@
-const React = require('react')
-const Default = require('../default')
+const React = require("react");
+const Default = require("../default");
 
-function show (data) {
-    return(
-        <Default>
-            <main>
-                <h1>{data.place.name}</h1>
-            </main>
-            <a href={`/places/${data.id}/edit`} className="btn btn-warning">
-                Edit
+function show(data) {
+  return (
+    <Default>
+      <main>
+        <div className="row">
+          <div className="col-sm-6">
+            <img src={data.place.pic} alt={data.place.name} />
+            <h3>
+              Located in {data.place.city}, {data.place.state}
+            </h3>
+          </div>
+          <div className="col-sm-6">
+            {/* ... */}
+            <h2>Description</h2>
+            <h3>{data.place.showEstablished()}</h3>
+            <h4>Serving {data.place.cuisines}</h4>
+            <a
+              href={`/places/${data.place.id}/edit`}
+              className="btn btn-warning"
+            >
+              Edit
             </a>
-            <form method="POST" action={`/places/${data.id}?_method=DELETE`}>
-                <button type="submit" className="btn btn-danger">
-                    Delete
-                </button>
+            {` `}
+            <form
+              method="POST"
+              action={`/places/${data.place.id}?_method=DELETE`}
+            >
+              <button type="submit" className="btn btn-danger">
+                Delete
+              </button>
             </form>
-        </Default>
-    )
+            <div>
+                {/* needs comment box */}
+              <h2>Comments</h2>
+              <div className="row"></div> 
+            </div>
+          </div>
+        </div>
+      </main>
+    </Default>
+  );
 }
 
-module.exports = show
+module.exports = show;
