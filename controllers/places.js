@@ -44,14 +44,14 @@ router.get('/:id', (req, res) => {
 })
 
 router.put('/:id', (req, res) => {
-  db.Place.findByIdAndUpdate(req.params.id, req.body)
-      .then(() => {
-          res.redirect(`/places/${req.params.id}`)
-      })
-      .catch(err => {
-          console.log('err', err)
-          res.render('error404')
-      })
+    db.Place.findByIdAndUpdate(req.params.id, req.body)
+    .then(() => {
+        res.redirect(`/places/${req.params.id}`)
+    })
+    .catch(err => {
+        console.log('err', err)
+        res.render('error404')
+    })
 })
 
 router.get('/:id/edit', (req, res) => {
@@ -68,7 +68,7 @@ router.get('/:id/edit', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   db.Place.findByIdAndDelete(req.params.id)
-      .then(() => {
+      .then(place => {
           res.redirect('/places')
       })
       .catch(err => {
@@ -102,6 +102,18 @@ router.post('/:id/comment', (req, res) => {
       .catch(err => {
           res.render('error404')
       })
+})
+
+router.delete('/:id/comment/:commentId', (req, res) => {
+    db.Comment.findByIdAndDelete(req.params.commentId)
+        .then(() => {
+            console.log('Success')
+            res.redirect(`/places/${req.params.id}`)
+        })
+        .catch(err => {
+            console.log('err', err)
+            res.render('error404')
+        })
 })
 
 module.exports = router;
