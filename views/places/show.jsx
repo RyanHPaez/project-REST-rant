@@ -7,6 +7,7 @@ function show (data) {
         No comments yet!
       </h3>
     )
+    //adding logic to comments
     let rating = (
       <h3 className="inactive">
         Not yet rated
@@ -104,7 +105,7 @@ function show (data) {
                 </div>
                 <div className="form-group col-sm-2">
                   <label htmlFor="rant">Rant?</label>
-                  <input type="checkbox" id="rant" name="rant" className="form-control" />
+                  <input type="checkbox" id="rant" name="rant" className="form-check-input" />
                 </div>
               </div>
               <input type="submit" className="btn btn-primary" value="Add Comment" />

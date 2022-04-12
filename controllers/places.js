@@ -53,7 +53,7 @@ router.put('/:id', (req, res) => {
         res.render('error404')
     })
 })
-
+//edit
 router.get('/:id/edit', (req, res) => {
   db.Place.findById(req.params.id)
       .then(place => {
@@ -65,7 +65,7 @@ router.get('/:id/edit', (req, res) => {
 })
 
 
-
+//delete
 router.delete('/:id', (req, res) => {
   db.Place.findByIdAndDelete(req.params.id)
       .then(place => {
@@ -82,6 +82,7 @@ router.post('/:id/comment', (req, res) => {
   console.log('post comment', req.body)
   if (req.body.author === '') { req.body.author = undefined }
   req.body.rant = req.body.rant ? true : false
+  console.log('rant', req.body)
   db.Place.findById(req.params.id)
       .then(place => {
           db.Comment.create(req.body)
