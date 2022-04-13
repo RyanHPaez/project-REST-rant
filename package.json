@@ -5,12 +5,13 @@
     "node": "17.8.0"
   },
   "description": "REST-Rant is an app where users can review restaurants.",
-  "main": "node server.js",
+  "main": "server.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ryan Paez",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.0",
