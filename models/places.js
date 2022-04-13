@@ -1,5 +1,18 @@
 const mongoose = require('mongoose')
 
+const db = process.env.MONGO || 'test'    
+    
+mongoose.connect(db, {
+      useNewUrlParser: true,
+      useUnifiedTopology:true,
+      useCreateIndex: true
+    }).then(()=>{
+      console.log("conected to mongodb");
+    }).catch(error => {
+      console.log("mongo error",error);
+    })
+
+
 const placeSchema = new mongoose.Schema({
   name: { type: String, required: true },
   pic: { type: String, default: 'http://placekitten.com/350/350'},
