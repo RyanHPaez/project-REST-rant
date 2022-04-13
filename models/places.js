@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const db = process.env.MONGO || 'test'
 
 const placeSchema = new mongoose.Schema({
   name: { type: String, required: true },

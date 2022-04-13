@@ -1,6 +1,5 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
-
 const db = process.env.MONGO || 'test'    
     
 mongoose.connect(db, {
