@@ -13,7 +13,7 @@ const mongoose = require('mongoose')
 //       console.log("mongo error",error);
 //     })
 
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect(process.env.MONGODB_URI.DB, {
   useNewUrlParser: true, 
   useUnifiedTopology: true,
 
