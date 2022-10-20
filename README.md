@@ -1,3 +1,5 @@
+npm start and go to localhost: 3005
+
 # Project REST-Rant
 
 REST-Rant is an app where users can review restaurants.
