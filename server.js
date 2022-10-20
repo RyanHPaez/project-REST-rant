@@ -6,14 +6,6 @@ const express = require('express');
 const app = express();
 const methodOverride = require('method-override')
 
-// Connect to MongoDB
-mongoose.connect('process.env.MONGO_URI', {useNewUrlParser: true});
-mongoose.connection.once('open', function(){
-  console.log('Conection has been made!');
-}).on('error', function(error){
-    console.log('Error is: ', error);
-});
-
 //Express Settings
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx');
