@@ -1,6 +1,7 @@
 //Dependencies
 const mongoose = require('mongoose');
-require('dotenv').config({ path: 'ENV_FILENAME' });
+const dotenv = require("dotenv");
+dotenv.config();
 const express = require('express');
 const app = express();
 const methodOverride = require('method-override')
