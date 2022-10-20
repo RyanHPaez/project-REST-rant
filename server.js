@@ -1,8 +1,22 @@
+import express from 'express'
+import dotenv from 'dotenv'
+import connectDB from './config/db.js' // DB connection
+
+
+dotenv.config()
+const PORT = process.env.PORT || 3005
+const mode = process.env.NODE_ENV
+
+
+
+connectDB() //this function connects us to the DB!!!
+
 //Dependencies
 require('dotenv').config({ path: 'process.env.MONGO_URI' });
 const express = require('express');
-const app = express();
+
 const methodOverride = require('method-override')
+
 
 //Express Settings
 app.set('views', __dirname + '/views')
