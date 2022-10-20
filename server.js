@@ -1,11 +1,16 @@
 //Dependencies
-const mongoose = require('mongoose')
 require('dotenv').config();
 const express = require('express');
 const app = express();
 const methodOverride = require('method-override')
 
-
+// Connect to MongoDB
+mongoose.connect('process.env.MONGO_URI', {useNewUrlParser: true});
+mongoose.connection.once('open', function(){
+  console.log('Conection has been made!');
+}).on('error', function(error){
+    console.log('Error is: ', error);
+});
 
 //Express Settings
 app.set('views', __dirname + '/views')
@@ -26,14 +31,4 @@ app.get('*', (req, res) => {
     res.status(404).render('error404');
 })
 
-
-
 app.listen(process.env.PORT);
-
-// Connect to MongoDB
-mongoose.connect('process.env.MONGO_URI', {useNewUrlParser: true});
-mongoose.connection.once('open', function(){
-  console.log('Conection has been made!');
-}).on('error', function(error){
-    console.log('Error is: ', error);
-});
