@@ -1,21 +1,10 @@
-import express from 'express'
-import dotenv from 'dotenv'
-import connectDB from './config/db.js' // DB connection
-
-
-dotenv.config()
-const PORT = process.env.PORT || 3005
-const mode = process.env.NODE_ENV
-
-
-
-connectDB() //this function connects us to the DB!!!
-
 //Dependencies
-require('dotenv').config({ path: 'process.env.MONGO_URI' });
+const mongoose = require('mongoose')
+require('dotenv').config();
 const express = require('express');
-
+const app = express();
 const methodOverride = require('method-override')
+
 
 
 //Express Settings
@@ -37,4 +26,14 @@ app.get('*', (req, res) => {
     res.status(404).render('error404');
 })
 
+
+
 app.listen(process.env.PORT);
+
+// Connect to MongoDB
+mongoose.connect('process.env.MONGO_URI', {useNewUrlParser: true});
+mongoose.connection.once('open', function(){
+  console.log('Conection has been made!');
+}).on('error', function(error){
+    console.log('Error is: ', error);
+});
