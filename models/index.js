@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
   
 
     
-mongoose.connect("mongodb+srv://Solosnail:ZsVL6VBScJDTJPw@cluster0.6mr3r.mongodb.net/project-REST-rant", {
+mongoose.connect("", {
     
     }).then(()=>{
       console.log("conected to mongodb");
